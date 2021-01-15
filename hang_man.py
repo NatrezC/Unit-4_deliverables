@@ -5,34 +5,51 @@
 import random #ask questions on importing
 
 # input('Welcome! Press enter to play hangman')
-pick_number = input("Welcome to hangman! Pick a number from 0 to 7")
+# pick_number = input("Welcome to hangman! Pick a number from 0 to 7")
 
 word_list = ['batman', 'wonderwoman', 'thor', 'ironman', 'antman', 'hulk', 'elastigirl', 'humantorch']
 
+def word_finder(word_list):
+    word = random.choice(word_list)
+    print(word)
 
+def game():
+    print(word_finder(word_list)
+word_finder(word_list)
+# game()
 #print(word_list[int(pick_number)])
-def word_finder(pick_number, word_list):
-    num = int(pick_number)
-    word = word_list[num]
-    word_length = len(word)
-    print(f'Your word is', word)
-    print(f'The length of you word is', word_length, 'characters long')
+# def word_finder(pick_number, word_list):
+#     num = int(pick_number)
+#     word = word_list[num]
+#     word_length = len(word)
+#     print(f'Your word is', word)
+#     print(f'The length of you word is', word_length, 'characters long')
 
-word_finder(pick_number, word_list)
+# word_finder(pick_number, word_list)
 
-class Word():
-    def __init__(self, chosen_word):
-        global word_list
-        self.chosen_word = random.choice(word_list)
-        self.letters =  0
-        self.tries = 5
+# class Word():
+#     def __init__(self, chosen_word):
+#         global word_list
+#         self.chosen_word = random.choice(word_list)
+#         self.letters =  0
+#         self.tries = 5
 
-    def choose_word(self):
-        self.word = random.choice(word_list)
-        print('your word is', self.word)
+#     def hang_man(self):
+#         self.letters = chosen_word
 
+    # def word_finder(self, pick_number, word_list):
+    #     num = int(pick_number)
+    #     word = word_list[num]
+    #     self.letters = int(word)
+    
 
+    # def choose_word(self):
+    #     self.word = random.choice(word_list)
+    #     print('your word is', self.word)
 
+# contestant_1 = Word(chosen_word)
+
+# print(contestant_1)
 
 
 
