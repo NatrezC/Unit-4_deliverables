@@ -24,39 +24,40 @@ def word_finder(word_list):
 
 #game_status
 def game_status(abc):
-    word = word_finder(word_list)
+    word = word_finder(word_list) #my random word
     letters = set(abc)
-    word_letters = set(word) #my random word
+    word_letters = set(word) #my random word by letters
     user_tries =  6
     used_letters = set()
-    user_input = input('Choose your letter: ').lower()
-    if user_input in letters:
-        #remove letter from abc
-        letters.remove(user_input)
-        #add letter to you used letter set
-        used_letters.add(user_input)
-        if user_input in word_letters:
-            word_letters.add(user_input)
-        #if you haven't used this letter yet and it is not inside of word
-        else:
-            user_tries -= 1
-            print('Nope! Not the right letter you are down to {user_tries}')
-            #if user tries get to zero
-            if user_tries == 0:
-                print('Game over! Ya lost kiddo! Better luck next time!')
+    input('Press Enter to play Hangman!!')
+    input('Welcome to hangman! This game will pick a random word and you have to guess that word!')
+    input('You have 6 tries to get all the letters')
+    input('Guess all the letters to win the game. Good Luck!')
+    while len(word_letters) > 0:
+        user_input = input('Choose your letter: ').lower()
+        if user_input in letters:
+            #remove letter from abc
+            letters.remove(user_input)
+            #add letter to you used letter set
+            used_letters.add(user_input)
+            if user_input in word_letters:
+                word_letters.add(user_input)
+            #if you haven't used this letter yet and it is not inside of word
+            else:
+                user_tries -= 1
+                print(f'Nope! Not the right letter you are down to {user_tries}')
+                #if user tries get to zero
+                if user_tries == 0:
+                    print('Game over! Ya lost kiddo! Better luck next time!')
 
-    #if function for if the letter is in the used letters
-    elif user_input in used_letters:
-        print('You already used that letter dude! Try a different one')
-    #not a valid letter
-    else:
-        print('Not a letter stupid!')
+        #if function for if the letter is in the used letters
+        elif user_input in used_letters:
+            print('You already used that letter dude! Try a different one')
+        #not a valid letter
+        else:
+            print('Not a letter stupid!')
             
 
-
-        
-        
-    
     return user_input
 
 def user_letter_input():
