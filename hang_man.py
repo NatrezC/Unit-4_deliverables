@@ -29,6 +29,7 @@ def game_status(abc):
     word_letters = set(word) #my random word by letters
     user_tries =  6
     used_letters = set()
+    user_win = 0
     # input('Press Enter to play Hangman!!')
     # input('Welcome to hangman! This game will pick a random word and you have to guess that word!')
     # input('You have 6 tries to get all the letters')
@@ -37,14 +38,18 @@ def game_status(abc):
     
     #keep it going!
     while len(word_letters) > 0:
+        print(f'Tries count {user_tries}')
         #if letter in your word is correct then paste that letter
         right_word = [letter if letter in used_letters else '_' for letter in word]
-        l = len(word_letters)
-
-        print(right_word)
-        print('your length is', l)
+        length = len(word_letters)
+        used = len(used_letters)
+        
+        print(used_letters)
+        print(''.join(right_word))
 
         user_input = input('Choose your letter: ').lower()
+        inp = len(user_input)
+        print('you have', inp,'user inputs')
         if right_word == word_letters:
             print("You won hangman")
             break
@@ -56,15 +61,16 @@ def game_status(abc):
             used_letters.add(user_input)
             if user_input in word_letters:
                 #word_letters.join(user_input)
-
                 print('Ok that letter is in there')
+                
             #if you haven't used this letter yet and it is not inside of word
             else:
                 user_tries -= 1
-                print(f'Nope! Not the right letter you are down to {user_tries}')
+                print('Nope!')
                 #if user tries get to zero
                 if user_tries == 0:
-                    print('Game over! Ya lost kiddo! Better luck next time!')
+                    print('Game over! Ya lost kiddo! Your word was',word,'. Better luck next time!')
+                    break
 
         #if function for if the letter is in the used letters
         elif user_input in used_letters:
