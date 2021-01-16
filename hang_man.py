@@ -30,26 +30,25 @@ def game_status(abc):
     user_tries =  6
     used_letters = set()
     user_win = 0
-    # input('Press Enter to play Hangman!!')
-    # input('Welcome to hangman! This game will pick a random word and you have to guess that word!')
-    # input('You have 6 tries to get all the letters')
-    # input('Guess all the letters to win the game. Good Luck!')
-    print(f'your word letters is', word_letters)
+    input('Press Enter to play Hangman!!')
+    input('Welcome to hangman! This game will pick a random word and you have to guess that word!')
+    input('You have 6 tries to get all the letters')
+    input('Guess all the letters to win the game. Good Luck!')
+
+    # print(f'your word letters is', word_letters)
     
     #keep it going!
     while len(word_letters) > 0:
         print(f'Tries count {user_tries}')
         #if letter in your word is correct then paste that letter
         right_word = [letter if letter in used_letters else '_' for letter in word]
-        length = len(word_letters)
-        used = len(used_letters)
-        
-        print(used_letters)
-        print(''.join(right_word))
+        #joins the letters to the '_'
+        print(' '.join(right_word))
 
         user_input = input('Choose your letter: ').lower()
-        print('random word is',word)
-        if ((''.join(right_word)) == word):
+        #print('random word is',word)
+        #win logic
+        if (''.join(right_word)) == word:
             print("You won hangman!")
             break
 
