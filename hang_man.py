@@ -31,7 +31,8 @@ def game_status(abc):
     used_letters = set()
     user_input = input('Choose your letter: ').lower()
     if user_input in letters:
-        print(user_input)
+        letters.remove(user_input)
+        print(letters)
         
     
     return user_input
