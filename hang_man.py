@@ -13,19 +13,19 @@
 import random #ask questions on importing
 
 
-
 word_list = ['batman', 'wonderwoman', 'thor', 'ironman', 'antman', 'hulk', 'elastigirl', 'humantorch', 'dash', 'blackpanther','megaman','wolverine','superman','elektra','daredevil','atom','aquaman','wasp','flash','staticshock','mrfantastic','robin']
 
-    
+# find a random word
 def word_finder(word_list):
     random_word = random.choice(word_list)
     return random_word
 
-def user_status():
+#game_status
+def game_status():
     word = word_finder(word_list)
-    word_letter = len(word)
+    word_letter = set(word)
     user_tries =  6
-    return word, word_letter, user_tries
+    
 
 def user_plays():
     user_tries = 6
@@ -36,7 +36,6 @@ def user_plays():
 user_status()
 
 
-    
 
 
 
