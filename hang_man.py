@@ -48,10 +48,9 @@ def game_status(abc):
         print(''.join(right_word))
 
         user_input = input('Choose your letter: ').lower()
-        inp = len(user_input)
-        print('you have', inp,'user inputs')
-        if right_word == word_letters:
-            print("You won hangman")
+        print('random word is',word)
+        if ((''.join(right_word)) == word):
+            print("You won hangman!")
             break
 
         if user_input in letters:
