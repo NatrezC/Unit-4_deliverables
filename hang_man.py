@@ -1,74 +1,42 @@
-#needs a word
-#when letter of that word is correct print the letter to where the letter is suppose to be placed
-#if letter is wrong then give them a strike
+# create an array with random words
+# create a function for the random word to be chosen
+# create a function to be able to track how many letters are inside of the array
+# for however many letters that are in the word add '_'
+# have the function to allow only 6 tries to guess
+# user is be able to guess the letters
+# if user letter = true place letter in appropriate spot / let the user know how many tries that they have
+# if user letter = false remove a try from the allowed try / also let user know how many tries that he has left
+# allow the user to know if they have already chosen the letter... if user have then let user know and do not count their try against them
+# if user uses all tries... acknowledge that they have lost
+# if user guesses the word... acknowledge that user have won
 
 import random #ask questions on importing
 
-# input('Welcome! Press enter to play hangman')
-# pick_number = input("Welcome to hangman! Pick a number from 0 to 7")
 
-word_list = ['batman', 'wonderwoman', 'thor', 'ironman', 'antman', 'hulk', 'elastigirl', 'humantorch']
 
+word_list = ['batman', 'wonderwoman', 'thor', 'ironman', 'antman', 'hulk', 'elastigirl', 'humantorch', 'dash', 'blackpanther','megaman','wolverine','superman','elektra','daredevil','atom','aquaman','wasp','flash','staticshock','mrfantastic','robin']
+
+    
 def word_finder(word_list):
-    word = random.choice(word_list)
-    print(word)
+    random_word = random.choice(word_list)
+    return random_word
 
-def game():
-    print(word_finder(word_list)
-word_finder(word_list)
-# game()
-#print(word_list[int(pick_number)])
-# def word_finder(pick_number, word_list):
-#     num = int(pick_number)
-#     word = word_list[num]
-#     word_length = len(word)
-#     print(f'Your word is', word)
-#     print(f'The length of you word is', word_length, 'characters long')
+def user_status():
+    word = word_finder(word_list)
+    word_letter = len(word)
+    user_tries =  6
+    return word, word_letter, user_tries
 
-# word_finder(pick_number, word_list)
-
-# class Word():
-#     def __init__(self, chosen_word):
-#         global word_list
-#         self.chosen_word = random.choice(word_list)
-#         self.letters =  0
-#         self.tries = 5
-
-#     def hang_man(self):
-#         self.letters = chosen_word
-
-    # def word_finder(self, pick_number, word_list):
-    #     num = int(pick_number)
-    #     word = word_list[num]
-    #     self.letters = int(word)
+def user_plays():
+    user_tries = 6
+    
     
 
-    # def choose_word(self):
-    #     self.word = random.choice(word_list)
-    #     print('your word is', self.word)
 
-# contestant_1 = Word(chosen_word)
-
-# print(contestant_1)
+user_status()
 
 
+    
 
 
-
-
-    # this method will split the word up into a list of dictionaries with 2 attributes:
-    # the letter/character, and a boolean representing whether or not it has been guessed
-
-  # ...other methods here... (refer back to JS hangman for ideas -- may not translate exactly, but
-  # should be close enough)
-
-
-# some variables here to prepare the wordlist, initialize things like
-# `remaining_guesses` (start a round with 8), `letters_used`, the `chosen_word` (randomly
-# chosen from a list of words you also declare here perhaps?),
-#and whatever else you might want to keep track of
-
-
-# a loop here that will cause game to play and be exited when user either wins or loses
-# see below for tips on how to structure this loop
 
