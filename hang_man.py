@@ -29,12 +29,16 @@ def game_status(abc):
     word_letter = set(word)
     user_tries =  6
     used_letters = set()
-    # user_input = input('Choose your letter: ').lower()
-    print(letters)
+    user_input = input('Choose your letter: ').lower()
+    if user_input in letters:
+        print(user_input)
+        
+    
+    return user_input
 
-def user_letter_input(user_input):
-    if user_input == True:
-        pass
+def user_letter_input():
+    user_input = game_status(abc)
+    
     
     
     
