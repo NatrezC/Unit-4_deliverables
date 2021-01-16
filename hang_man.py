@@ -29,19 +29,35 @@ def game_status(abc):
     word_letters = set(word) #my random word by letters
     user_tries =  6
     used_letters = set()
-    input('Press Enter to play Hangman!!')
-    input('Welcome to hangman! This game will pick a random word and you have to guess that word!')
-    input('You have 6 tries to get all the letters')
-    input('Guess all the letters to win the game. Good Luck!')
+    # input('Press Enter to play Hangman!!')
+    # input('Welcome to hangman! This game will pick a random word and you have to guess that word!')
+    # input('You have 6 tries to get all the letters')
+    # input('Guess all the letters to win the game. Good Luck!')
+    print(f'your word letters is', word_letters)
+    
+    #keep it going!
     while len(word_letters) > 0:
+        #if letter in your word is correct then paste that letter
+        right_word = [letter if letter in used_letters else '_' for letter in word]
+        l = len(word_letters)
+
+        print(right_word)
+        print('your length is', l)
+
         user_input = input('Choose your letter: ').lower()
+        if right_word == word_letters:
+            print("You won hangman")
+            break
+
         if user_input in letters:
             #remove letter from abc
             letters.remove(user_input)
             #add letter to you used letter set
             used_letters.add(user_input)
             if user_input in word_letters:
-                word_letters.add(user_input)
+                #word_letters.join(user_input)
+
+                print('Ok that letter is in there')
             #if you haven't used this letter yet and it is not inside of word
             else:
                 user_tries -= 1
